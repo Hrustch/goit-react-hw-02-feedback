@@ -8,9 +8,7 @@ export default class App extends Component {
   state = {good: 0, neutral: 0, bad: 0}
 
   countTotalFeedback = ()=>{
-    let count = 0;
-    Object.values.reduce((acc, count)=>{acc + count}, 0)
-    return count;
+    return Object.values.reduce((acc, count)=>(acc + count), 0)   
   }
   countPositiveFeedbackPercentage = ()=>{
     if (this.countTotalFeedback() > 0){
