@@ -9,9 +9,7 @@ export default class App extends Component {
 
   countTotalFeedback = ()=>{
     let count = 0;
-    Object.keys(this.state).map((option)=>(       
-      count += this.state[option]   
-    ))
+    Object.values.reduce((acc, count)=>{acc + count}, 0)
     return count;
   }
   countPositiveFeedbackPercentage = ()=>{
