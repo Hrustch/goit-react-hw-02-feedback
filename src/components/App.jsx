@@ -6,9 +6,10 @@ import { Notification } from './Feedback/Notification';
 
 export default class App extends Component {
   state = { good: 0, neutral: 0, bad: 0 };
-
+  
   countTotalFeedback = () => {
-    return Object.values.reduce((acc, count) => acc + count, 0);
+    console.log(this.state.values)
+    return Object.values(this.state).reduce((acc, count) => (acc + count), 0);
   };
   countPositiveFeedbackPercentage = () => {
     if (this.countTotalFeedback() > 0) {
